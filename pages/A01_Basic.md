@@ -102,7 +102,33 @@ Kết thúc vòng lặp
     * Để có thể xác định một biến thuộc kiểu dữ liệu nào ta sử dụng hàm `typeof(tên biến)`
     * Để có thể xác định xem một biến có phải thuộc kiểu dữ liệu đó hay không dùng hàm `is.kiểu dữ liệu cần kiểm tra(tên biến)`
     * Để có thể chuyển đổi kiểu dữ liệu ta sử dụng hàm `as.kiểu dữ liệu cần chuyển (tên biến)`
+    ngoài việc có thể chuyển đồi các kiểu đữ liệu ta cũng có thể chuyển đổi các dạng của chúng ví dụ có thể ( chuyển một vector -> một ma trận ) hay ( chuyển một vector thành một data frame )
 * **Kiểu dữ liệu logic trong R**
     * TRUE đối với giá trị đúng 
     * FALSE đối với giá trị là sai   
-
+* **Kiểu dữ liệu số phức**
+    * Với ngôn ngữ R hỗ trợ kiểu dữ liệu số phức ví dụ 
+```R
+x <- 4 + 3i
+print(class(x))
+print(typeof(x))
+```
+**Output**
+```command
+[1] "complex"
+[2] "complex"
+```
+* **Kiểu dữ liệu ký tự trong R**
+Ngôn ngữ R hỗ trợ kiểu dữ liệu ký tự ( bao gồm alphabet và ký tự đặc biệt ). Mặc dù kiểu dữ liệu thông thường là string nhưng trong R vẫn được hiểu là character
+* **Raw data trong R**
+Để lưu trữ và làm việc với dự liệu dạng byte trong R, ta có thể sử dụng raw data. Bằng việc trình bày một loạt các byte chưa được sử lý ở định dạng thấy nhất là nhị phân
+```R
+x <- as.raw(c(0x1, 0x2, 0x3, 0x4))
+print(class(x))
+print(typeof(x))
+```
+**Output**
+```command
+[1] 01 01 03 04
+```
+4 thành phần trong raw vector x, mỗi số được biểu diễn thành một giá trị raw data
